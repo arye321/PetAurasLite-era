@@ -1,0 +1,8 @@
+## Interface: 20504
+## Title: PetAurasLite
+## Notes: Lightweight pet buff/debuff bars
+## Author: YourName
+## Version: 1.5
+## SavedVariables: PetAurasLiteDB
+PetAurasLite.lua
+PetAurasLiteOptions.lua
