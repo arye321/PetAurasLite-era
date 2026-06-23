@@ -6,7 +6,7 @@ local ADDON_NAME           = "PetAurasLite"
 local ICON_SIZE            = 15
 local ICON_SPACING         = 4
 local CONTAINER_PADDING    = 4
-local PLACEHOLDER_ALPHA    = 0.1
+local PLACEHOLDER_ALPHA    = 1
 local CLICK_BG_ALPHA       = 0.35
 
 -- ===========================
@@ -90,6 +90,7 @@ local function CreateAuraBar(name, anchorFrame, yOffset, numIcons)
         local icon = CreateFrame("Frame", nil, bar, "BackdropTemplate")
         icon:SetSize(ICON_SIZE, ICON_SIZE)
         icon:SetPoint("LEFT", bar, "LEFT", CONTAINER_PADDING + (i - 1) * (ICON_SIZE + ICON_SPACING), 0)
+        -- set icon color blue
 
         -- Slot 1 is always mouse-enabled
         if i == 1 then
@@ -104,7 +105,6 @@ local function CreateAuraBar(name, anchorFrame, yOffset, numIcons)
         icon.placeholder:SetTexture("Interface\\Buttons\\WHITE8x8")
         icon.placeholder:SetVertexColor(1, 1, 1, 0)
         icon.placeholder:SetShown(i == 1)
-
         -- Icon texture
         icon.texture = icon:CreateTexture(nil, "ARTWORK")
         icon.texture:SetAllPoints()
@@ -292,7 +292,23 @@ SlashCmdList["PETAURASLITE"] = function()
         PetAurasLiteOptions:SetShown(not PetAurasLiteOptions:IsShown())
     end
 end
+SLASH_PETAURAS1 = "/qq"
+SlashCmdList["PETAURAS"] = function()
+    -- print(1)
+    -- debuffBar.icons[0].placeholder:SetVertexColor(1, 1, 1, 1)
+    -- show icon placeholder
+    -- add var named count
+    local count = 0
 
+    for _, icon in ipairs(debuffBar.icons) do
+        -- check if icon has attribute placeholder
+        if icon.placeholder then
+            print(count)
+            icon.placeholder:SetVertexColor(1, 1, 1, 1)
+        end
+        count = count + 1
+    end
+end
 -- ===========================
 -- Loaded Message
 -- ===========================
