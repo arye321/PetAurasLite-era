@@ -279,7 +279,6 @@ eventFrame:SetScript("OnEvent", function(_, event, arg1)
     if event == "PLAYER_LOGIN"
         or (event == "UNIT_PET" and arg1 == "player")
         or (event == "UNIT_AURA" and arg1 == "pet") then
-        UpdateAuraBar(buffBar, "pet", false)
         UpdateAuraBar(debuffBar, "pet", true)
     end
 end)
