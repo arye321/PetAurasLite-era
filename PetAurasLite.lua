@@ -295,19 +295,19 @@ end
 SLASH_PETAURAS1 = "/qq"
 SlashCmdList["PETAURAS"] = function()
     -- print(1)
-    -- debuffBar.icons[0].placeholder:SetVertexColor(1, 1, 1, 1)
+    debuffBar.icons[1].placeholder:SetVertexColor(1, 1, 1, 1)
     -- show icon placeholder
     -- add var named count
-    local count = 0
+    -- local count = 0
 
-    for _, icon in ipairs(debuffBar.icons) do
-        -- check if icon has attribute placeholder
-        if icon.placeholder then
-            print(count)
-            icon.placeholder:SetVertexColor(1, 1, 1, 1)
-        end
-        count = count + 1
-    end
+    -- for _, icon in ipairs(debuffBar.icons) do
+    --     -- check if icon has attribute placeholder
+    --     if icon.placeholder then
+    --         -- print(count)
+    --         icon.placeholder:SetVertexColor(1, 1, 1, 1)
+    --     end
+    --     -- count = count + 1
+    -- end
 end
 -- ===========================
 -- Loaded Message
